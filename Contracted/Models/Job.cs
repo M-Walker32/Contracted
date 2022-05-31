@@ -1,6 +1,6 @@
 namespace Contracted.Models
 {
-  public class Jobs
+  public class Job
   {
     public int Id { get; set; }
     public int companyId { get; set; }

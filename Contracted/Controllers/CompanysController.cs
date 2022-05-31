@@ -44,6 +44,21 @@ namespace Contracted.Controllers
         return BadRequest(e.Message);
       }
     }
+    // GET JOBS BY COMPANY
+    [HttpGet("{id}/contractors")]
+    public ActionResult<List<JobsViewModel>> GetContractors(int id)
+    {
+      try
+      {
+        List<JobsViewModel> contractors = _js.GetContractors(id);
+        return Ok(contractors);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+    // CREATE 
     [HttpPost]
     public ActionResult<Company> Create([FromBody] Company company)
     {
